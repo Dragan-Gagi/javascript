@@ -106,86 +106,185 @@
 
 
 
-var dataOld = [34, true, "Peter", 1992];
-var dataNew = [];
+// var dataOld = [34, true, "Peter", 1992];
+// var dataNew = [];
 
 
 
-dataNew = dataOld;
+// dataNew = dataOld;
 
-console.log(dataNew)
+// console.log(dataNew)
 
-//Task 2
+// //Task 2
 
-var dataOld = [34, true, "Peter", 1992];
-var dataNew = [];
-
-
-dataNew=dataOld.reverse ();
-
-console.log (dataNew);
-
-//Task 3
-
-var dataOld = [34, true, "Peter", 1992];
-var dataNew = [12, "Jack"];
+// var dataOld = [34, true, "Peter", 1992];
+// var dataNew = [];
 
 
-var otherData = dataNew.concat(dataOld);
+// dataNew=dataOld.reverse ();
+
+// console.log (dataNew);
+
+// //Task 3
+
+// var dataOld = [34, true, "Peter", 1992];
+// var dataNew = [12, "Jack"];
 
 
-console.log (otherData);
-
-//Task 4
-
-const array1 = [12, 56, 32, 44];
-const array2 = [88, 7, 13];
+// var otherData = dataNew.concat(dataOld);
 
 
-const array3 = array1.concat(array2);
+// console.log (otherData);
 
-console.log (array3);
+// //Task 4
+
+// const array1 = [12, 56, 32, 44];
+// const array2 = [88, 7, 13];
+
+
+// const array3 = array1.concat(array2);
+
+// console.log (array3);
+
+// //Task 5
+
+
+// const a = [12, 56, 32, 44];
+// const b = [88, 7, 13];
+
+
+// const result = a.map((element, index) => [element, b[index]]
+// ).flat();
+    
+// result.splice (-1)
+
+// console.log (result);
+
+
+// // Task 6
+
+
+// for (var i=1;i<=6; i++) {
+//     for (var j=1;j <=i;j++) {
+//         document.write("*");
+//     }
+//     document.write ("<br/>");
+// }
+
+// document.write("<br/>");
+// document.write ("<br/>");
+// //Task 7 
+
+
+// var n =" ";
+//  for (var i=1; i<=6; i++){
+//      for (var j=1; j<=10; j++){
+//          if (i>1 && i<6 && j>1 && j<10 ) {
+ 
+//          document.write(n*j);
+//      }
+//      else  {
+//          document.write("*");
+//      }
+//  }
+//  document.write("<br/>");
+//  }
+
+
+
+//Task 1
+
+var num= [29,49,40,11,55];
+var newNum=[];
+
+
+function printNum (list) {
+    for (var i = 0; i<list.length ; i++) {
+        newNum[i]=list[list.length -1 -i];
+    }
+    console.log (newNum);
+    }
+
+
+printNum (num);
+
+
+// Task 2
+
+
+function doSomething (sentence) {
+        console.log ("This code is working")
+
+}
+
+doSomething();
+// Task 3
+
+var arr= ["Jim","Steven","Konstantin","Mike", "Peter"];
+
+
+function findLongestWordLength(str) {
+  
+ 
+    var maxLength=0;
+    var theWord;
+
+  for ( i = 0; i < str.length; i++) {
+    if (str[i].length > maxLength) {
+      maxLength= str[i].length;
+      theWord = str[i];
+    }
+  }
+console.log (maxLength,theWord)
+}
+
+
+findLongestWordLength(arr);
+
+
+//Task4
+
+function Second_Greatest_Lowest(arr_num)
+{
+  var uniqa = [arr_num[0]];
+  var result = [];
+  
+  for(var i=1; i < arr_num.length; i++)
+  {
+    if(arr_num[i-1] !== arr_num[i])
+    {
+      uniqa.push(arr_num[i]);
+    }
+  }
+    result.push(uniqa[1],uniqa[uniqa.length-2]);
+  return result.join(',');
+  }
+
+console.log(Second_Greatest_Lowest([23,58,100,433,53]));
+
+
+
 
 //Task 5
 
+function calculate (moreNums,singleNum) {
+    var newArray=[];
 
-const a = [12, 56, 32, 44];
-const b = [88, 7, 13];
-
-
-const result = a.map((element, index) => [element, b[index]]
-).flat();
-    
-result.splice (-1)
-
-console.log (result);
-
-
-// Task 6
-
-
-for (var i=1;i<=6; i++) {
-    for (var j=1;j <=i;j++) {
-        document.write("*");
+    for (var i = 0; i<moreNums.length; i++) {
+        if (moreNums[i] > singleNum) {
+            newArray[newArray.length] = moreNums[i];
+        }
     }
-    document.write ("<br/>");
+    return newArray;
 }
 
-document.write("<br/>");
-document.write ("<br/>");
-//Task 7 
 
 
-var n =" ";
- for (var i=1; i<=6; i++){
-     for (var j=1; j<=10; j++){
-         if (i>1 && i<6 && j>1 && j<10 ) {
- 
-         document.write(n*j);
-     }
-     else  {
-         document.write("*");
-     }
- }
- document.write("<br/>");
- }
+function firstFunction (moreNums,singleNum) {
+    var biggerNumbers = calculate (moreNums,singleNum);
+
+    console.log (biggerNumbers);
+}
+
+
+firstFunction ([14, 59, 60, 7, 21], 25);
